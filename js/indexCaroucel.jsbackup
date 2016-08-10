@@ -39,7 +39,6 @@ function click (id, callback){
 //得到所有的图片
 var allImg = $("list");
 
-
 click("prev", function(){
     nextPage(false);
 });
@@ -48,24 +47,8 @@ click("next", function(){
 });
 
 function nextPage(next){
-    //偏移总量
-    var offset= next ? -800 : 800;
-    //总时间
-    var time = 400;
-    //单次移动时间;
-    var preTimes = 20;
-    //移动次数
-    var itemMove = offset/(time/preTimes);
-    //目标位置
-    var targetLeft = allImg.offsetLeft + offset;
-
-    var intervalId = setInterval(function(){
-        var currentLeft = allImg.offsetLeft;
-        if(currentLeft == targetLeft){
-            clearInterval(intervalId);
-        } else {
-            allImg.style.left = currentLeft + itemMove + "px";
-        }
-    }, preTimes);
+    var offset = next ? -800 : 800//判断布尔值，或者600 或者-600 然后赋值给offset
+    var left = allImg.offsetLeft + offset;
+    allImg.style.left = left + "px";
 }
 
