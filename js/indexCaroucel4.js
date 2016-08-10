@@ -64,8 +64,7 @@ function nextPage(next){
     var targetLeft = allImg.offsetLeft + offset;
 
     //第二种方式
-    //第二次调优
-    //实际上是在点击之前截获行为。
+    //调优
     var intervalId = setInterval(function(){
         var left = allImg.offsetLeft + itemMove;
         allImg.style.left = left + "px";

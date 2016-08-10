@@ -38,7 +38,7 @@ function click (id, callback){
 }
 //得到所有的图片
 var allImg = $("list");
-var moving = false;
+
 
 click("prev", function(){
     nextPage(false);
@@ -48,10 +48,6 @@ click("next", function(){
 });
 
 function nextPage(next){
-    if (moving){
-        return;
-    }
-    moving = true;
     //偏移总量
     var offset= next ? -800 : 800;
     //总时间
@@ -64,8 +60,7 @@ function nextPage(next){
     var targetLeft = allImg.offsetLeft + offset;
 
     //第二种方式
-    //第二次调优
-    //实际上是在点击之前截获行为。
+    //调优
     var intervalId = setInterval(function(){
         var left = allImg.offsetLeft + itemMove;
         allImg.style.left = left + "px";
@@ -73,7 +68,6 @@ function nextPage(next){
             || (offset<0 && left<=targetLeft)){
             clearInterval(intervalId);
             left = targetLeft;
-            moving = false;
         }
     }, preTimes);
 }
