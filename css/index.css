@@ -19,7 +19,7 @@ body {
 /*包含所有图片的<div>*/
 
 #list {
-    width: 4000px;/*7张图片的宽: 7*600 */
+    width: 5600px;/*7张图片的宽: 7*800 */
     height: 400px;
     position: absolute; /*绝对定位*/
     z-index: 1;

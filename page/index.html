@@ -7,12 +7,14 @@
 </head>
 <body>
 <div id="container">
-    <div id="list" style="left: 0px;">
-        <img src="../img/1.jpg" alt="1" />
+    <div id="list" style="left: -800px;">
+        <img src="../img/5.jpg" alt="5" /><!--到达次张，-800*(imgCount)-->
+        <img src="../img/1.jpg" alt="1" /><!-- -800px -->
         <img src="../img/2.jpg" alt="2" />
         <img src="../img/3.jpg" alt="3" />
         <img src="../img/4.jpg" alt="4" />
         <img src="../img/5.jpg" alt="5" />
+        <img src="../img/1.jpg" alt="1" /><!--到达此张，说明left=-800*(imgCount+1)  变为-800-->
     </div>
     <div id="buttons">
         <span index="1" class="on"></span>
