@@ -60,12 +60,14 @@ function nextPage(next){
     var targetLeft = allImg.offsetLeft + offset;
 
     //第二种方式
-
+    //调优
     var intervalId = setInterval(function(){
-        var currentLeft = allImg.offsetLeft + itemMove;
-        allImg.style.left = currentLeft + "px";
-        if(currentLeft == targetLeft){
+        var left = allImg.offsetLeft + itemMove;
+        allImg.style.left = left + "px";
+        if((offset>0 && left>=targetLeft)
+            || (offset<0 && left<=targetLeft)){
             clearInterval(intervalId);
+            left = targetLeft;
         }
     }, preTimes);
 }
